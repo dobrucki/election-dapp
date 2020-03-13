@@ -1,10 +1,11 @@
 import React from 'react';
 import Ballot from './Ballot';
+import Navbar from './Navbar';
 
 function App() {
   return (
     <div className="App">
-      <Ballot></Ballot>
+      <Navbar />
     </div>
   );
 }
