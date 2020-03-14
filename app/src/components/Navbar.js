@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
-import  { Link, NavLink } from 'react-router-dom';
+import React from 'react';
+import  { Link } from 'react-router-dom';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
@@ -19,6 +18,7 @@ import BallotIcon from '@material-ui/icons/Ballot';
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import ContactPhoneIcon from '@material-ui/icons/ContactPhone';
+import HomeIcon from '@material-ui/icons/Home';
 
 const useStyles = makeStyles(theme => ({
   menuButton: {
@@ -54,26 +54,32 @@ const Navbar = () => {
       onKeyDown={toggleDrawer(false)}
     >
       <List>
-        <ListItem button key='Ballot'>
+        <ListItem button key='Home' component={Link} to='/'>
+          <ListItemIcon>
+            <HomeIcon />
+          </ListItemIcon>
+          <ListItemText primary='Home' />
+        </ListItem>
+        <ListItem button key='Ballot' component={Link} to='/Ballot'>
           <ListItemIcon>
             <BallotIcon />
           </ListItemIcon>
           <ListItemText primary='Ballot' />
         </ListItem>
-        <ListItem button key='Candidates'>
+        <ListItem button key='Candidates' component={Link} to='/Candidates'>
           <ListItemIcon>
             <PeopleAltIcon />
           </ListItemIcon>
           <ListItemText primary='Candidates' />
         </ListItem>
-        <ListItem button key='Results'>
+        <ListItem button key='Results' component={Link} to='/Results'>
           <ListItemIcon>
             <TrendingUpIcon />
           </ListItemIcon>
           <ListItemText primary='Results' />
         </ListItem>
         <Divider />
-        <ListItem button key='Contact'>
+        <ListItem button key='Contact' component={Link} to='/Contact'>
           <ListItemIcon>
             <ContactPhoneIcon />
           </ListItemIcon>

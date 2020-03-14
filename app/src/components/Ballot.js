@@ -3,9 +3,7 @@ import React from 'react';
 
 const Ballot = () => {
     return(
-        <div className="Ballot">
-            <h1>Hello world</h1>
-        </div>
+        <h3>Ballot component</h3>
     );
 }
 
