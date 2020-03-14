@@ -7,21 +7,23 @@ import Ballot from './components/Ballot';
 import Candidates from './components/Candidates';
 import Results from './components/Results';
 import Contact from './components/Contact';
-
+import { Container } from '@material-ui/core';
 
 
 const App = () => {
   return (
       <BrowserRouter>
         <Navbar />
-        <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/Ballot' component={Ballot} />
-          <Route path='/Candidates' component={Candidates} />
-          <Route path='/Results' component={Results} />
-          <Route path='/Contact' component={Contact} />
-          <Route component={Error} />
-        </Switch>
+        <Container>
+          <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/Ballot' component={Ballot} />
+            <Route path='/Candidates' component={Candidates} />
+            <Route path='/Results' component={Results} />
+            <Route path='/Contact' component={Contact} />
+            <Route component={Error} />
+          </Switch>
+        </Container>
       </BrowserRouter>
   );
 }
