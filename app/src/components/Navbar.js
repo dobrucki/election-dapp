@@ -16,6 +16,9 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import BallotIcon from '@material-ui/icons/Ballot';
+import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
+import TrendingUpIcon from '@material-ui/icons/TrendingUp';
+import ContactPhoneIcon from '@material-ui/icons/ContactPhone';
 
 const useStyles = makeStyles(theme => ({
   menuButton: {
@@ -56,6 +59,25 @@ const Navbar = () => {
             <BallotIcon />
           </ListItemIcon>
           <ListItemText primary='Ballot' />
+        </ListItem>
+        <ListItem button key='Candidates'>
+          <ListItemIcon>
+            <PeopleAltIcon />
+          </ListItemIcon>
+          <ListItemText primary='Candidates' />
+        </ListItem>
+        <ListItem button key='Results'>
+          <ListItemIcon>
+            <TrendingUpIcon />
+          </ListItemIcon>
+          <ListItemText primary='Results' />
+        </ListItem>
+        <Divider />
+        <ListItem button key='Contact'>
+          <ListItemIcon>
+            <ContactPhoneIcon />
+          </ListItemIcon>
+          <ListItemText primary='Contact' />
         </ListItem>
       </List>
     </div>
