@@ -20,12 +20,12 @@ const App = () => {
   return (
       <BrowserRouter>
         <Navbar />
-          <Switch className={classes.content}>
-            <Route path='/' exact component={Home} />
-            <Route path='/Ballot' component={Ballot} />
-            <Route path='/Results' component={Home} />
-            <Route component={Error} />
-          </Switch>
+        <Switch className={classes.content}>
+          <Route path='/' exact component={Home} />
+          <Route path='/Ballot' component={Ballot} />
+          <Route path='/Results' component={Home} />
+          <Route component={Error} />
+        </Switch>
       </BrowserRouter>
   );
 }
