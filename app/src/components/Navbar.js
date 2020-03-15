@@ -19,6 +19,7 @@ import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import ContactPhoneIcon from '@material-ui/icons/ContactPhone';
 import HomeIcon from '@material-ui/icons/Home';
+import Avatar from '@material-ui/core/Avatar';
 
 const useStyles = makeStyles(theme => ({
   menuButton: {
@@ -32,7 +33,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Navbar = () => {
+const Navbar = (props) => {
   const classes = useStyles();
   const [state, setState] = React.useState({
     sideMenu: false,
@@ -100,9 +101,10 @@ const Navbar = () => {
             <Typography variant="h6" className={classes.title}>
               election-dapp
             </Typography>
-            <IconButton edge='end' aria-label='account of current user' color='inherit'>
-              <AccountCircle />
-            </IconButton>
+            <Avatar button>T</Avatar>
+            <Typography>
+              {props.accounts}
+            </Typography>
           </Toolbar>
         </AppBar>
         <Drawer open={state.sideMenu} onClose={toggleDrawer(false)}>

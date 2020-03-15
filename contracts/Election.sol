@@ -4,18 +4,30 @@ pragma solidity >=0.5.1 <0.7.0;
 contract Election {
 
     struct Candidate {
-        bytes32 name;
+        string name;
         uint voteCount;
     }
 
-    address owner;
+    struct Voter {
+        bool voted;
+    }
 
-    Candidate[] public candidates;
+    address public owner;
 
-    constructor(bytes32[] memory _candidates) public {
+    mapping (uint => Candidate) public candidates;
+
+    uint public candidatesCount;
+
+    mapping (address => Voter) public voters;
+
+    function addCandidate(string memory _name) private {
+        candidatesCount += 1;
+        candidates[candidatesCount] = Candidate(_name, 0);
+    }
+
+    constructor() public {
         owner = msg.sender;
-        for (uint i = 0; i < _candidates.length; i++) {
-            candidates.push(Candidate(_candidates[i], 0));
-        }
+        addCandidate("Kasia");
+        addCandidate("Mirek");
     }
 }
